@@ -1,0 +1,16 @@
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+
+    <div class="text-center login rounded-2 ">
+      
+            <h3 class="globalColor">Login </h3>
+            <input #userName type="text"  class=" mt-5  rounded-3" placeholder="userName">
+            <input #Password type="password" class=" mt-4 rounded-3" placeholder="Password">
+        <div class=" ">
+
+            <button (click)="login(userName,Password)" class="btnGlobal w-100 mt-5 rounded-3 ">Login</button>
+        </div>
+           <p class="mt-5 grayLight">Not a member?<a routerLink="/register" class="globalColor  ms-2">Register</a></p> 
+        
+    </div>
+</div>

@@ -1,0 +1,25 @@
+
+table{
+    border-radius: 10px !important;
+    overflow-x:auto;
+}
+thead{
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 4px !important;
+}
+thead th{
+    padding: 14px 16px;
+    
+}
+tr td {
+    border: none;
+}
+.botton a{
+    background-color: var(--main-color);
+    /* padding: 8px 14px; */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    width: 152px;
+}

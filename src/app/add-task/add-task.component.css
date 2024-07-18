@@ -1,0 +1,16 @@
+
+.add .btnCancel{
+    border: 1px solid var(--main-color);
+    background-color: white;
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 7px 0px;
+    transition: 0.3s;
+}
+.add .btnCancel:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+textarea{
+    resize: none;
+}

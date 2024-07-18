@@ -1,0 +1,43 @@
+
+
+<div class="botton py-3 d-flex justify-content-between mt-5">
+    <a routerLink="/add" class="rounded-3  text-center px-4 py-2"><i class="fa-solid fa-plus"></i> Add</a>
+    <button (click)="Logout()" class="btn btn-outline-danger"><i class="fa-solid fa-right-from-bracket logOut"></i> Logout</button>
+</div>
+
+
+<div *ngIf="TasksService.tasks.length == 0">
+    <p class="alert alert-info mt-5">Not Found Tasks</p>
+
+</div>
+
+<div *ngIf="TasksService.tasks.length != 0" class="content mt-3" >
+
+    <div class="botton d-flex justify-content-end py-3">
+     <button class="btn btn-danger px-4" (click)="clear()" ><i class="fa-solid  fa-trash-can"></i> Clear</button>
+    </div>
+    <table  class="table table-striped text-center mt-4 rounded-2">
+        <thead>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of paginateTasks; index as i" >
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+                <td><i (click)="deleteTask(i)" class="fa-regular  fa-trash-can text-danger fs-5 "></i></td>
+            </tr>
+        </tbody>
+    </table>
+    <ngb-pagination
+        class="d-flex justify-content-center p-1"
+        style="color: rgb(5, 155, 155) !important"
+        [pageSize]="pageSize"
+        [(page)]="currentPage"
+        [collectionSize]="TasksService.tasks.length"
+        [boundaryLinks]="false"
+        [maxSize]="maxSize"
+        (pageChange)="paginate($event)"
+      ></ngb-pagination>
+</div>
